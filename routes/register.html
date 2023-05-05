@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Online Voting System - Registeration</title>
+        <link rel="stylesheet" href="../css/stylesheet.css">
+    </head>
+    <body>
+        <style> 
+            #address{
+                width: 35%;
+            }
+            #role{
+                border: 2px solid black;
+                border-radius: 5px;
+                padding: 10px;
+                width: 35%;
+            }
+            #role select{
+                padding: 10px;
+                border-radius: 5px;
+            }
+        </style>
+        <center>
+        <h1>Online Voting System</h1>
+        <hr>
+        <h3>Registeration</h3>
+        <form action="../api/register.php" method="post">
+            <input type="text" name="name" placeholder="Enter name">
+            <input type="number" name="mobile" placeholder="Enter mobile"><br><br>
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="cpassword" placeholder="Confirm Password"><br><br>
+            <input id="address" type="text" name="address" placeholder="Address"><br><br>       
+            <label for="age">Age:</label>
+            <input type="age" id="age" name="age" placeholder="Age">
+                <div id="role">
+                Select Your Role: <select name="role">
+                    <option value="1">Voter</option>
+                    <option value="2">Group</option>
+                </select>
+            </div>
+            <br>            
+            <button 
+                style =" padding: 10px;
+                        border-radius: 5px;
+                        background-color: blue;
+                        color: aliceblue;">
+                    Register</button><br><br>
+            Already user? <a href="../index.html">Login here</a>
+            </form>
+            <script>
+                ageByid('age').value;
+                if(age<18){
+                    alert("Sorry,only individuals aged 18 and above are eligible to vote.");
+                    return false;
+                }else{
+                    alert("Thank you,"+name+'Your vote has been submitted');
+                    return true;
+                }
+            </script>
+    </center>
+    </body>
+</html>
